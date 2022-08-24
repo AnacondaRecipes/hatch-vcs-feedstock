@@ -17,6 +17,8 @@ requirements:
     - hatchling >=0.21.0
     - pip
     - python
+    - wheel
+    - setuptools
   run:
     - hatchling >=0.21.0
     - python
@@ -37,8 +39,10 @@ about:
     This provides a plugin for Hatch that uses your preferred version
     control system (like Git) to determine project versions.
   dev_url: https://github.com/ofek/hatch-vcs
+  doc_url: https://pypi.org/project/hatch-vcs/
   license: MIT
-  license_file: LICENSE.txt
+  license_family: MIT
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
