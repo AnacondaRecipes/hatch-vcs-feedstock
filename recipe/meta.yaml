@@ -42,7 +42,7 @@ about:
   doc_url: https://pypi.org/project/hatch-vcs/
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
