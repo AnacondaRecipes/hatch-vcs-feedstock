@@ -47,3 +47,5 @@ about:
 extra:
   recipe-maintainers:
     - nicoddemus
+  skip-lints:
+    - python_build_tool_in_run
