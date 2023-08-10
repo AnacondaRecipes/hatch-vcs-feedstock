@@ -14,15 +14,15 @@ build:
 
 requirements:
   host:
-    - hatchling >=0.21.0
+    - hatchling 1.8.0
     - pip
     - python
     - wheel
     - setuptools
   run:
-    - hatchling >=0.21.0
+    - hatchling >=1.1.0
     - python
-    - setuptools-scm
+    - setuptools-scm >=6.4.0
 
 test:
   imports:
