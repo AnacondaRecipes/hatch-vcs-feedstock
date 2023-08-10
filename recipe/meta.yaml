@@ -17,8 +17,6 @@ requirements:
     - hatchling 1.8.0
     - pip
     - python
-    - wheel
-    - setuptools
   run:
     - hatchling >=1.1.0
     - python
