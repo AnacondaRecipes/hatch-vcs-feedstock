@@ -1,28 +1,26 @@
 {% set name = "hatch-vcs" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hatch_vcs-{{ version }}.tar.gz
-  sha256: 9913d733b34eec9bb0345d0626ca32165a4ad2de15d1ce643c36d09ca908abff
+  sha256: cec5107cfce482c67f8bc96f18bbc320c9aa0d068180e14ad317bbee5a153fee
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - hatchling >=0.21.0
+    - hatchling 1.8.0
     - pip
     - python
-    - wheel
-    - setuptools
   run:
-    - hatchling >=0.21.0
+    - hatchling >=1.1.0
     - python
-    - setuptools-scm
+    - setuptools-scm >=6.4.0
 
 test:
   imports:
@@ -47,3 +45,6 @@ about:
 extra:
   recipe-maintainers:
     - nicoddemus
+  skip-lints:
+    - python_build_tool_in_run
+    - missing_wheel
