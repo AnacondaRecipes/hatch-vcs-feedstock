@@ -10,11 +10,11 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - hatchling 1.8.0
+    - hatchling 1.18
     - pip
     - python
   run:
