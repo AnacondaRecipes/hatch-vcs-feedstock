@@ -1,16 +1,17 @@
 {% set name = "hatch-vcs" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hatch_vcs-{{ version }}.tar.gz
-  sha256: cec5107cfce482c67f8bc96f18bbc320c9aa0d068180e14ad317bbee5a153fee
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 093810748fe01db0d451fabcf2c1ac2688caefd232d4ede967090b1c1b07d9f7
 
 build:
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  skip: True  # [py<38]
 
 requirements:
   host:
@@ -23,24 +24,28 @@ requirements:
     - setuptools-scm >=6.4.0
 
 test:
+  source_files:
+    - tests
   imports:
     - hatch_vcs
   commands:
     - pip check
+    - pytest -v tests
   requires:
     - pip
+    - pytest
 
 about:
   home: https://pypi.org/project/hatch-vcs/
   summary: Hatch plugin for versioning with your preferred VCS
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
   description: |
     This provides a plugin for Hatch that uses your preferred version
     control system (like Git) to determine project versions.
   dev_url: https://github.com/ofek/hatch-vcs
   doc_url: https://pypi.org/project/hatch-vcs/
-  license: MIT
-  license_family: MIT
-  license_file: LICENSE.txt
 
 extra:
   recipe-maintainers:
