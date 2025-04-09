@@ -34,6 +34,7 @@ test:
   requires:
     - pip
     - pytest
+    - git  # [linux]
 
 about:
   home: https://pypi.org/project/hatch-vcs/
