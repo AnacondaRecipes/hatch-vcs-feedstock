@@ -10,7 +10,7 @@ source:
   sha256: 0395fa126940340215090c344a2bf4e2a77bcbe7daab16f41b37b98c95809ff9
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -38,7 +38,7 @@ test:
   requires:
     - pip
     - pytest
-    - git  # [linux]
+    - git
 
 about:
   home: https://pypi.org/project/hatch-vcs
